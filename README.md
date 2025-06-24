@@ -52,7 +52,5 @@ Emotion labels are encoded using LabelEncoder and then converted into one-hot ve
 | Sad       | 78.7%    |
 | Surprised | 87.2%    |
 
-## How to Run CLI Script
-For quick single-file testing via terminal:
-{python scripts/predict_emotion.py path/to/your/audio.wav}
+
 
