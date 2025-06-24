@@ -8,10 +8,12 @@ from tensorflow.keras.models import load_model
 import sys
 
 # Load model and label encoder
-model = load_model("D:\\study\\sem5\\Summer\\MaRS\\model\\emotionn_modell.h5")
-#model = load_model("model/emotionn_modell.h5")
+model_path = "model/emotionn_modell.h5"
+if not os.path.exists(model_path):
+    raise FileNotFoundError("Model file not found. Ensure 'emotionn_modell.h5' exists in the 'model' folder.")
+model = load_model(model_path)
 
-# Emotion labels (must match training)
+
 emotion_labels = ['angry', 'calm', 'disgust', 'fearful', 'happy', 'neutral', 'sad', 'surprised']
 
 def extract_mfcc(file_path, sr=22050, n_mfcc=40, max_pad_len=200):
