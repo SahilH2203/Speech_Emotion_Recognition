@@ -1,3 +1,6 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 import streamlit as st
 import numpy as np
 import librosa
@@ -5,8 +8,11 @@ from tensorflow.keras.models import load_model
 import os
 
 # Load model once
-model=load_model("D:\\study\\sem5\\Summer\\MaRS\\model\\emotionn_modell.h5")
-#model = load_model("model/emotionn_modell.h5")
+model_path = "model/emotionn_modell.h5"
+if not os.path.exists(model_path):
+    raise FileNotFoundError("Model file not found. Ensure 'emotionn_modell.h5' exists in the 'model' folder.")
+model = load_model(model_path)
+
 emotion_labels = ['angry', 'calm', 'disgust', 'fearful', 'happy', 'neutral', 'sad', 'surprised']
 
 # Feature extractor
