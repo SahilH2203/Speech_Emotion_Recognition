@@ -38,7 +38,7 @@ Emotion labels are encoded using LabelEncoder and then converted into one-hot ve
 | **Test Accuracy**      | **83.1%**                     |
 | **Per-Class Accuracy** | All emotion classes ≥ **75%** |
 | **Macro F1-Score**     | **83%**                       |
-| **Dataset Used**       | RAVDESS (speech part only)    |
+| **Dataset Used**       | RAVDESS                       |
 #### Per Class Accuracy Breakdown
 
 | Emotion   | Accuracy |
